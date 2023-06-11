@@ -167,7 +167,7 @@ let i=1;
                       href={`/admin1/shareholder_registration?id=${shareholder._id}`}
                     >
                       <FaEdit className="mt-1 mr-2 ml-1" />
-                      Approve
+                      Pending
                     </Link>{" "}
                   </button>
                   

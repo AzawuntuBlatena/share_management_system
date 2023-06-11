@@ -38,8 +38,8 @@ export default function Navbar(){
     <div   style={{ backgroundColor: `${navBg}` }}
     className={
       shadow
-        ? 'sticky top-0 w-full h-30 shadow-2xl z-[100] ease-in-out duration-300 rounded-full'
-        : ' w-full h-38 z-[100] rounded-lg p-auto sticky top-0'
+        ? 'sticky top-0 w-full h-25 shadow-2xl z-[100] ease-in-out duration-300 rounded'
+        : ' w-full h-30 z-[100] rounded p-auto sticky top-0'
     }
     >
       <div  className='flex justify-around items-center w-full h-full px-2 2xl:px-16'>

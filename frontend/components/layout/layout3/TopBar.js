@@ -16,24 +16,12 @@ export default function TopBar({ showNav, setShowNav }) {
   const router = useRouter();
   const {logout}= UserAuth();
   let user= JSON.parse(sessionStorage.getItem("user"));
-
-
 const handleLogout=async (e) =>{
-  const user= JSON.parse(sessionStorage.getItem("user"));
-  const confirm = window.confirm("are you sure you want to log out?");
-   
-   if(confirm){
-   
+   console.log("first")
     if(user){
       logout();
       router.push('/login')
-    }
-   }else {
-       // same as clicking a link 
-       // not optimal solution though
-       window.location.href = window.location.href;
-   
-  }
+   }
 }
   return (
     <div
@@ -65,10 +53,8 @@ const handleLogout=async (e) =>{
       <p className="hidden md:block">
        <span className='text-pink-600 font-light'> well come</span>
       <span className="ml-2 text-purple-600 font-bold">
-                  
-      {user.firstname}
+      {user && user.firstname}
        </span></p>
-              
             <ChevronDownIcon className="ml-2 h-4 w-4 text-gray-700" />
             </Menu.Button>
           </div>
@@ -83,9 +69,9 @@ const handleLogout=async (e) =>{
           >
             <Menu.Items className="absolute right-0 w-56 z-50 mt-2 origin-top-right bg-white rounded shadow-sm">
               <div className="p-1"> 
-                <Menu.Item>
+              <Menu.Item>
                   <Link
-                    href="#"
+                    href="/admin1/settings"
                     className="flex hover:bg-orange-500 hover:text-white text-gray-700 rounded p-2 text-sm group transition-colors items-center"
                   >
                     <Cog8ToothIcon className="h-4 w-4 mr-2" />
@@ -93,18 +79,13 @@ const handleLogout=async (e) =>{
                   </Link>
                 </Menu.Item>
                 <Menu.Item>
-                  <Link
-                    href=""
-                    className="flex hover:bg-orange-500 hover:text-white text-gray-700 rounded p-2 text-sm group transition-colors items-center"
-                  >
-                    < FiLogOut className="h-4 w-4 mr-2" />
-                    <div className=" ">
-                  <button onClick={() => handleLogout()} >
-        
+                 
+                <button onClick={() => handleLogout()} className="flex  hover:bg-orange-500 hover:text-white text-gray-700 rounded w-full p-2 text-sm transition-colors items-center">  
+                  
+                  
+                  < FiLogOut className="h-4 w-4 mr-2" />
                      Logout
                     </button>
-                     </div>
-                  </Link>
                 </Menu.Item>
               </div>
             </Menu.Items>

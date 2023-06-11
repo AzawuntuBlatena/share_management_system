@@ -24,7 +24,6 @@ const buy = () => {
   },[])
   const handleSubmit = async (event) => {
     event.preventDefault();
-    // TODO: Handle form submission
     const addshareamount = {
       firstname,
       middlename,

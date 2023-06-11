@@ -38,7 +38,7 @@ const Footer = () => {
               </Link>
             </li>
             <li className="ml-6">
-              <Link href="/#news" legacyBehavior>
+              <Link href="/news" legacyBehavior>
                 <a className="text-white hover:text-gray-500 transition duration-300 ease-in-out">
                  News
                 </a>

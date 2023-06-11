@@ -19,6 +19,7 @@ app.use('/api/transaction',require('./routes/transaction'));
 app.use('/api/selltransaction',require('./routes/selltransaction'));
 app.use("/api/calculate-dividend", require("./routes/dividend"));
 app.use('/api/buyer',require('./routes/buyers'));
+app.use('/api/contactus',require('./routes/contact'));
 app.use(errorHandler);
 app.all('*', (req,res,next) => {
  res.json({err:"page not found"});

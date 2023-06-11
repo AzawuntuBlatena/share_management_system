@@ -71,12 +71,12 @@ const NewsCard = ({adminnews}) => {
     <>
     {adminnews && adminnews.map(item => (
        <div >
-    <div className= 'w-full h-auto p-8 shadow-2xl shadow-black rounded-xl items-center '>
+    <div className= 'w-full h-auto mx-auto p-8 shadow-2xl shadow-black rounded-xl items-center '>
     <div className="font-bold text-blue-700">{item.title}</div>
       
       <div className='my-2'>{item.description}</div>  
       <div className='my-4'>{item.content}</div>
-      <div className='my-4 rounded-lg'><img src={`http://localhost:8000/${item.image}`}/></div>
+      <img src={`http://localhost:8000/${item.image}`} className='w-70 h-60'/>
         
        <p className='italic text-normal text-right text-blue-950 pb-0 '>{formatDistanceToNow(new Date(item.createdAt),{addSuffix:true})}</p>
        

@@ -41,7 +41,7 @@ const news = () => {
     showLayout && <Layout>
      <div className='px-10 py-6'>
      <div className="text-2xl font-bold ">News</div>
-     <div className="grid grid-cols-1  grid-col-reverse   justify-center gap-5 mt-8  ">
+     <div className="grid grid-cols-1  grid-col-reverse  w-2/3 mx-auto justify-center gap-6 mt-8  ">
          {news && <NewsCard adminnews={news}/>} 
        </div>
      </div>

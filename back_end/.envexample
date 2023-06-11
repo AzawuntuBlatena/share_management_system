@@ -1,6 +1,6 @@
 MONGO_URL= "mongodb://localhost:27017/sssss"
 NODE_ENV = development
-PORT = 0022
+PORT = "0000"
 JWT_SECRET =yours
 USER='email'
 PASS='password'

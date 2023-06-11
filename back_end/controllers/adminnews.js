@@ -2,8 +2,8 @@ const asyncHandler = require('express-async-handler');
 const AdminNews = require('../model/adminNews');
 const { default: mongoose } = require('mongoose');
 const createAdminNews=asyncHandler(async(req,res)=>{
-  const {title,content,author,description}=req.body;
-  if(!title || !content || !author|| !description){
+  const {title,content,description}=req.body;
+  if(!title || !content || !description){
     res.status(404);
     throw new Error("please fill all fields");
   }
@@ -11,10 +11,10 @@ const createAdminNews=asyncHandler(async(req,res)=>{
     title:req.body.title,
     content:req.body.content,
     description:req.body.description,
-    author:req.body.author,
   })
   if(req.file){
     admin.image=req.file.path
+  }
     admin.save().then(()=>{
       res.json({
         message:"saved"
@@ -25,7 +25,6 @@ const createAdminNews=asyncHandler(async(req,res)=>{
         message:"error"
       })
     })
-  }
 })
 const getAdminNews=asyncHandler(async(req,res)=>{
   const news=await AdminNews.find();

@@ -84,7 +84,7 @@ export default function Settings() {
         <title>User Settings - Shareholder Management System</title>
       </Head>
       <div className="max-w-5xl mx-auto py-16 px-4">
-        <h1 className="text-3xl font-medium text-gray-800 mb-8">User Settings</h1>
+        <h1 className="text-3xl font-medium text-gray-800 mb-8">Setting</h1>
         <div className={`bg-${nightModeEnabled ? 'gray-800' : 'white'} border border-gray-200 rounded-lg p-4 shadow`}>
           <form  onSubmit={handleNameEmailSubmit}>
             <div className="mb-4">

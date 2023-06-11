@@ -6,13 +6,31 @@ const ContactPage = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-
-  const handleSubmit = (event) => {
+  const [error,setError]=useState("");
+  const handleSubmit = async(event) => {
     event.preventDefault();
-    console.log("Name:", name);
-    console.log("Email:", email);
-    console.log("Message:", message);
-    // TODO: Send form data to server
+    const contactus = {
+      name,
+      email,
+      message,
+    };
+    const response = await fetch("http://localhost:8000/api/contactus", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(contactus),
+    });
+    const data = await response.json();
+    if (response.ok) {
+      setName("")
+      setEmail("")
+      setMessage("")
+      setError("");
+    }
+     else {
+      setError(data.message);
+    }
   };
 
   return (

@@ -48,7 +48,7 @@ function dashboared() {
         <title>Admin Dashboard - Shareholder Management System</title>
       </Head>
       <div className="max-w-5xl mx-auto py-16 px-4">
-        <h1 className="text-3xl font-medium text-gray-800 mb-8">Welcome to the Admin Dashboard</h1>
+        <h1 className="text-3xl font-medium text-gray-800 mb-8">Welcome to the Manager Dashboard</h1>
         <div className="bg-white border border-gray-200 rounded-lg p-4 shadow">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                  <div className="flex items-center p-4 rounded-lg hover:bg-gray-50 transition-colors duration-300 ease-in-out">
@@ -149,14 +149,14 @@ function dashboared() {
               </div>
               </Link>
               <div>
-                <h2 className="text-lg font-medium text-gray-800 mb-2">Sell Share</h2>
+                <h2 className="text-lg font-medium text-gray-800 mb-2">New Buyers</h2>
                 <p className="text-gray-700">
-                  Sell share to new and old buyer
+                  view and approve the new user to become a shareholder
                 </p>
               </div>
             </div>
             <div className="flex items-center p-4 rounded-lg hover:bg-gray-50 transition-colors duration-300 ease-in-out">
-            <Link href="http://localhost:3000/admin1/chat">
+            <Link href="http://localhost:3000/admin1/buyersList">
               <div className="rounded-full bg-indigo-500 text-white p-2 mr-4">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -175,9 +175,9 @@ function dashboared() {
               </div>
               </Link>
               <div>
-                <h2 className="text-lg font-medium text-gray-800 mb-2">Chat with Admins</h2>
+                <h2 className="text-lg font-medium text-gray-800 mb-2">Added shareamount</h2>
                 <p className="text-gray-700">
-                  Start a chat with an shareholders to receive any queastion and answer.
+                  view added shareamount by the shareholders and update the shareamount
                 </p>
               </div>
             </div>
@@ -203,7 +203,7 @@ function dashboared() {
                 <div>
                 <h2 className="text-lg font-medium text-gray-800 mb-2">Setting</h2>
                 <p className="text-gray-700">
-                  you can change your password 
+                  change your password 
                 </p>
               </div>
                 </div>

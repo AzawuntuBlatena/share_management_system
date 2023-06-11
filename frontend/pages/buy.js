@@ -38,21 +38,6 @@ const buy = () => {
     if (image) {
       formData.append('image', image, image.name);
     }
-  // const registration = {
-  //   firstname,
-  //   middlename,
-  //   lastname,
-  //   country,
-  //   city,
-  //   subcity,
-  //   wereda,
-  //   email,
-  //   phoneNo,
-  //   password,
-  //   houseNo,
-  //   paidbirr,
-  //   shareamount,
-  // };
   const response = await fetch("http://localhost:8000/api/buyer", {
     method: "POST",
     // headers: {
@@ -95,8 +80,6 @@ const handleImageChange = (event) => {
 };
   return (
     <Heator>
-    
-    
     <div id="buy" className="max-w-lg mx-auto rounded-lg bg-gray-400 pt-10 mt-10">
       <Head>
         <title className="">register</title>
@@ -124,6 +107,7 @@ const handleImageChange = (event) => {
               className="w-full px-3 py-2 text-gray-700 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
               onChange={(event) => setFirstName(event.target.value)}
               value={firstname}
+              
             />
           </div>
           <div className="mb-4">
@@ -140,6 +124,7 @@ const handleImageChange = (event) => {
               className="w-full px-3 py-2 text-gray-700 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
               onChange={(event) => setMiddleName(event.target.value)}
               value={middlename}
+              
             />
           </div>
 
@@ -157,6 +142,7 @@ const handleImageChange = (event) => {
               className="w-full px-3 py-2 text-gray-700 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
               onChange={(event) => setLastName(event.target.value)}
               value={lastname}
+              
             />
           </div>
         </div>
@@ -186,12 +172,14 @@ const handleImageChange = (event) => {
           <input
             type="password"
             id="password"
-            autoComplete="current-password"
+            // autoComplete="current-password"
             required
             className="w-full px-3 py-2 text-gray-700 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
             onChange={(event) => setPassword(event.target.value)}
             value={password}
+            minLength={6}
           />
+           
         </div>
         <div className="mb-4">
           <label
@@ -208,6 +196,9 @@ const handleImageChange = (event) => {
             className="w-full px-3 py-2 text-gray-700 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
             onChange={(event) => setPhoneNo(event.target.value)}
             value={phoneNo}
+            minLength={10}
+            maxLength={10}
+            
           />
         </div>
         <div className="grid grid-cols-2 gap-x-4 mb-4">
@@ -225,6 +216,7 @@ const handleImageChange = (event) => {
               className="w-full px-3 py-2 text-gray-700 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
               onChange={(event) => setCity(event.target.value)}
               value={city}
+            
             />
           </div>
 
@@ -242,6 +234,7 @@ const handleImageChange = (event) => {
               className="w-full px-3 py-2 text-gray-700 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
               onChange={(event) => setSubcity(event.target.value)}
               value={subcity}
+             
             />
           </div>
           <div className="mt-4">
@@ -258,6 +251,7 @@ const handleImageChange = (event) => {
               className="w-full px-3 py-2 text-gray-700 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
               onChange={(event) => setWereda(event.target.value)}
               value={wereda}
+             
             />
           </div>
         </div>
@@ -277,6 +271,7 @@ const handleImageChange = (event) => {
               className="w-full px-3 py-2 text-gray-700 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
               onChange={(event) => setHouseNo(event.target.value)}
               value={houseNo}
+              
             />
           </div>
           <div>
@@ -292,7 +287,8 @@ const handleImageChange = (event) => {
               required
               className="w-full px-3 py-2 text-gray-700 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
               onChange={(event) => setCountry(event.target.value)}
-              value={country}
+              value={"Ethiopia"}
+              
             />
           </div>
         </div>
@@ -326,7 +322,7 @@ const handleImageChange = (event) => {
         </div>
         {image && (
           <div className="mb-4">
-            <Image src={URL.createObjectURL(image)} alt={image.name} width={640} height={360} className="rounded-md" />
+            <Image src={URL.createObjectURL(image)} alt={image.name} width={110} height={110} className="rounded-md" />
           </div>
         )}
         <div className="mb-8">

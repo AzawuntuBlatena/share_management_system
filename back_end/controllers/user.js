@@ -4,7 +4,6 @@ const bcrypt=require('bcryptjs');
 const Shareholders=require('../model/share');
 const  mongoose = require('mongoose');
 //@private access(logged in user)
-
 const updatepassword=asyncHandler(async (req, res) => {
   console.log(req.body)
   const {password}=req.body;

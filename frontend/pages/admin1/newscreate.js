@@ -8,7 +8,6 @@ import Link from 'next/link';
 const AddNews = () => {
   const router = useRouter();
   const [title, setTitle] = useState('');
-  const [author, setauthor] = useState('');
   const [content, setcontent] = useState('');
   const [description, setDescription] = useState('');
   const [image, setImage] = useState(null);
@@ -18,7 +17,6 @@ const AddNews = () => {
 
     const formData = new FormData();
     formData.append('title', title);
-    formData.append('author', author);
     formData.append('content', content);
     formData.append('description', description);
     if (image) {
@@ -32,7 +30,6 @@ const AddNews = () => {
 
     if (res.ok) {
       console.log(res);
-      setauthor(''),
       setcontent(''),
       setDescription(''),
       setTitle(''),

@@ -4,6 +4,7 @@ const request = require('request');
 const transaction = require('../model/transaction');
 const posttransaction=asyncHandler(async(req,res)=>{
     const value=req.query.trx_ref; // chapa verfication link
+    console.log("value")
     console.log(value)
     let options = {
       'method': 'GET',
@@ -19,6 +20,7 @@ const posttransaction=asyncHandler(async(req,res)=>{
        const result=await JSON.parse(response.body);
       console.log(result);
       let payment=new transaction({
+        transactionId:value,
         first_name:result.data.first_name,
         last_name:result.data.last_name,
         email:result.data.email,

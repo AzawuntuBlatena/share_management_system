@@ -1,6 +1,10 @@
 const mongoose=require('mongoose');
 const schema=mongoose.Schema;
 const action=new schema({
+    transactionId: {
+        type:String,
+        required:[true, 'please add Id']
+    },
     first_name: {
         type:String,
         required:[true, 'please add firstname']

@@ -72,14 +72,13 @@ const updateShare=asyncHandler(async(req,res)=>{
     //   res.status(404);
     //   throw new Error("no transaction ocurred");
     // }
-    shareExists.shareamount+=shareamount;
     // console.log(shareExists.shareamount);
     // console.log(shareExists.paidbirr);
-  
         if(!shareamount){
           res.status(404);
-          throw new Error("please add shareamount ");
+          throw new Error("please add shareamount");
         }
+        shareExists.shareamount+=shareamount;
       const share=await Shareholders.findOneAndUpdate({email},{shareamount:shareExists.shareamount});
        const oneshare=await Shareholders.findOne({email});
        console.log(oneshare.shareamount)   

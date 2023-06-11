@@ -1,6 +1,7 @@
 import { forwardRef } from "react";
 import Link from "next/link";
 import { HomeIcon, CreditCardIcon, UserIcon } from "@heroicons/react/24/solid";
+import {HiDocumentReport} from "react-icons/hi";
 import { useRouter } from "next/router";
 import { UserAuth } from "@/context/AuthContext";
 import { Cog8ToothIcon } from "@heroicons/react/24/outline";
@@ -134,7 +135,7 @@ const handleLogout=async (e) =>{
             </div>
           </div>
         </Link> */}
-        {/* <Link href="/shareholder/report">
+        <Link href="/shareholder/report">
           <div
             className={`pl-6 py-3 mx-5 rounded text-center cursor-pointer mb-3 flex items-center transition-colors ${
               router.pathname == "/shareholder/report"
@@ -149,7 +150,7 @@ const handleLogout=async (e) =>{
               <p>Reports</p>
             </div>
           </div>
-        </Link> */}
+        </Link> 
        
         <Link href="/shareholder/setting">
           <div

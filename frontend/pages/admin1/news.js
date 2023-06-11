@@ -43,12 +43,12 @@ function news() {
   }, [])
   return (
     <Layout>
-    <div className="h-screen w-full bg-gray-200 mb-10 p-4">
+    <div className=" w-full  bg-gray-200 mb-10 p-4">
     <div className='px-10 py-6'>
         <div className="w-40 p-2 bg-sky-500 xl:ml-80 sm:-ml-96 h-10 border border-gray-600 rounded-2xl text-center text-lg font-semibold text-white ">
           <Link href="/admin1/newscreate">Create News</Link>
         </div>
-        <div className="grid grid-cols-1 grid-flow-row   justify-center gap-5 mt-8  ">
+        <div className="grid grid-cols-1 grid-flow-row  gap-6 mt-8  ">
          {news && <AdminNewsCard adminnews={news}/>} 
        </div>
       </div>

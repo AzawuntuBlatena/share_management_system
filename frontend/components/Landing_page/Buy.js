@@ -171,7 +171,7 @@ const handleImageChange = (event) => {
           />
         </div>
         
-        <div className="mb-4">
+        {/* <div className="mb-4">
           <label
             htmlFor="password"
             className="block mb-2 font-bold text-gray-700"
@@ -180,6 +180,13 @@ const handleImageChange = (event) => {
           </label>
           <input
             type="password"
+             {...register("password", {
+                    required: "Please enter password",
+                    minLength: {
+                      value: 6,
+                      message: "password is more than 5 chars",
+                    },
+                  })}
             id="password"
             autoComplete="current-password"
             required
@@ -187,7 +194,32 @@ const handleImageChange = (event) => {
             onChange={(event) => setPassword(event.target.value)}
             value={password}
           />
-        </div>
+        </div> */}
+        <div className="rounded-md shadow-sm -space-y-px">
+               <div className="my-4">
+               <label 
+                className="font-bold "
+                 htmlFor="">Password</label>
+               </div>
+                <input
+                  className=" appearance-none  relative block w-full px-3 py-4 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm
+                           "
+                  type={"password"}
+                  placeholder="Enter your password"
+                  {...register("password", {
+                    required: "Please enter password",
+                    minLength: {
+                      value: 6,
+                      message: "password is more than 5 chars",
+                    },
+                  })}
+                  id="password"
+                />
+                {error.password && (
+                  <div className="text-red-500 ">{error.password.message}</div>
+                )}
+              </div>
+
         <div className="mb-4">
           <label
             htmlFor="phoneNo"
@@ -198,6 +230,13 @@ const handleImageChange = (event) => {
           <input
             type="tel"
             id="phoneNo"
+            {...register("phoneNo", {
+              
+              minLength: {
+                value: 6,
+                message: "phone no is only 10 chars",
+              },
+            })}
             required
             autoComplete="tel"
             className="w-full px-3 py-2 text-gray-700 border rounded-md focus:outline-none focus:ring focus:border-blue-300"

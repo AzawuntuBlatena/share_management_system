@@ -192,7 +192,7 @@ const BuyerTable = ({ shareholders }) => {
                     displayColumns < 2 ? "hidden" : ""
                   }`}
                 >
-                  <button>
+                  {/* <button>
                     <Link
                       className="flex text-center ml-2 bg-green-700"
                       href={`/admin1/edit_shareholder?id=${shareholder._id}`}
@@ -200,7 +200,7 @@ const BuyerTable = ({ shareholders }) => {
                       <FaEdit className="mt-1 mr-2 ml-1" />
                       Edit
                     </Link>{" "}
-                  </button>
+                  </button> */}
 
                   <form action="" method="post">
                     <div>

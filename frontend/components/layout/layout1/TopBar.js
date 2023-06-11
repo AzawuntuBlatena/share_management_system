@@ -21,20 +21,10 @@ export default function TopBar({ showNav, setShowNav }) {
 
 const handleLogout=async (e) =>{
   const user= JSON.parse(sessionStorage.getItem("user"));
-  const confirm = window.confirm("are you sure you want to log out?");
-   
-   if(confirm){
-   
     if(user){
       logout();
       router.push('/login')
     }
-   }else {
-       // same as clicking a link 
-       // not optimal solution though
-       window.location.href = window.location.href;
-   
-  }
 }
   return (
     <div
@@ -178,17 +168,16 @@ const handleLogout=async (e) =>{
                   </Link>
                 </Menu.Item>
                 <Menu.Item>
-                  <div
-                    className="flex hover:bg-orange-500 hover:text-white text-gray-700 rounded p-2 text-sm group transition-colors items-center"
-                  >
-                    < FiLogOut className="h-4 w-4 mr-2" />
-                    <div className=" ">
-                  <button onClick={() => handleLogout()} >
-        
+                 
+                <button onClick={() => handleLogout()} className="flex  hover:bg-orange-500 hover:text-white text-gray-700 rounded w-full p-2 text-sm transition-colors items-center">  
+                  
+                  
+                  < FiLogOut className="h-4 w-4 mr-2" />
                      Logout
+                    
                     </button>
-                     </div>
-                  </div>
+                     
+                  
                 </Menu.Item>
               </div>
             </Menu.Items>

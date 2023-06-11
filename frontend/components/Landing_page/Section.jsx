@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Sell from "@/components/Landing_page/Sell"
 
 const Section = () => {
   return (
@@ -31,7 +32,7 @@ const Section = () => {
     ,
     <section id="2" className="bg-slate-100">
        */}
-    
+    <div><Sell/></div>
       <div
         className="container flex flex-col items-center -mt-10 mx-auto space-y-30 md:space-y-10 md:flex-row "
       >
@@ -58,7 +59,7 @@ const Section = () => {
            </p>
            <p className="max-w-sm pt-3 text-center text-red-950 md:text-left">
            
- Manage every aspect of your board meetings in our secure cloud platform. Store all your documents, prepare and share your agendas, compile board packs and digitise your minutes, plus much more..
+ Manage every aspect of your share management in our secure cloud platform. Store all your documents, prepare and share your status, biu and increase share and digitise your datas, plus much more..
            </p>
            </div>
          </div>

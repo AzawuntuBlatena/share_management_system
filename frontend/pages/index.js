@@ -12,8 +12,9 @@ function Index() {
     <>
     <div>
     <Heator>
-      <Sell/>
+      
     <Section/>
+    
     <Aboutus/>
     {/* <News/> */}
     <Contact/>

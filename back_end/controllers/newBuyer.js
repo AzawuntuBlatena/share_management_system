@@ -21,9 +21,9 @@ const getBuyerById=asyncHandler(async (req,res)=>{
 })
 const createNew=asyncHandler(async(req,res)=>{
     const {firstname,middlename,lastname,country,email,city,subcity,wereda,password,houseNo,phoneNo,shareamount}=req.body;
-    if( !firstname || !middlename || !lastname  || !country ||!email || !city || !subcity || !password || !wereda || !houseNo || !phoneNo || !shareamount){
+    if( !firstname || !middlename || !lastname  ||!email || !city || !subcity || !password || !wereda || !houseNo || !phoneNo || !shareamount){
       res.status(404);
-      throw new Error("please fill all filed");
+      throw new Error("please fill all fileds");
     }
   const userExist=await buyers.findOne({email});
   if(userExist){
@@ -35,10 +35,10 @@ const createNew=asyncHandler(async(req,res)=>{
     res.status(404);
     throw new Error("shareholder already exists change your email");
   }
-  // if(shareamount < 1000){
-  //   res.status(404);
-  //   throw new Error("minimum shareamount should be 1000 birr");
-  // }
+  if(shareamount < 1000){
+    res.status(404);
+    throw new Error("minimum shareamount should be 1000 birr");
+  }
   const salt=await bcrypt.genSalt(10);
   const hashedPassword=await bcrypt.hash(password,salt);
   let share=new buyers({
@@ -74,9 +74,9 @@ let options = {
     "phone_number": req.body.phoneNo,
     "tx_ref": share._id,
     "callback_url": "http://localhost:8000/api/transaction",
-    "return_url": "http://localhost:3000",
+    "return_url": "http://localhost:3000/buyer_confirm",
     "customization[title]": "Payment for buying a share",
-    "customization[description]": "I love online payments"
+    "customization[description]": "payments"
   })
 };
 try {

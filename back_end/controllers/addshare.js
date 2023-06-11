@@ -2,11 +2,21 @@ const asyncHandler = require('express-async-handler');
 const { default: mongoose } = require('mongoose');
 const request = require('request');
 const oldshareholder = require('../model/shareamount');
+const Shareholders = require('../model/share');
 const createShare=asyncHandler(async(req,res)=>{
-  const {firstname,email,shareamount,lastname,middlename,phoneNo}=req.body;
+  const {firstname,email,lastname,shareamount,middlename,phoneNo}=req.body;
   if(!firstname || !middlename || !lastname || !phoneNo|| !email || !shareamount){
     res.status(404);
     throw new Error("please fill all fields");
+  }
+  const shareholder=await Shareholders.findOne({email});
+  if(!shareholder){
+    res.status(404);
+    throw new Error("shareholder dosenot exists");
+  }  
+  if(shareamount < 1000){
+    res.status(404);
+    throw new Error("minimum shareamount should be 1000 birr");
   }
   let share=new  oldshareholder({
     firstname,
@@ -32,9 +42,9 @@ body: JSON.stringify({
   "phone_number": req.body.phoneNo,
   "tx_ref": share._id,
   "callback_url": "http://localhost:8000/api/selltransaction",
-  "return_url": "http://localhost:3000/shareholder/dashboard",
-  "customization[title]": "Payment for my favourite merchant",
-  "customization[description]": "I love online payments"
+  "return_url": "http://localhost:3000/shareholder/confirm",
+  "customization[title]": "Payment for a share ",
+  "customization[description]": "payments"
 })
 };
 try {
@@ -46,6 +56,10 @@ try {
    const result=await JSON.parse(response.body);
   res.json({
     message:result.data.checkout_url
+  })
+  shareholder.shareamount*=shareamount;
+  shareholder.save().then(async(response)=>{
+    console.log("saved");
   })
   share.save().then(async(response)=>{
     console.log("saved");

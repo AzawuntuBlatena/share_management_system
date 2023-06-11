@@ -37,7 +37,7 @@ const News = () => {
       <div  className='px-10 py-6 mx-auto'>
       <div className="text-2xl font-bold  <div> ">News</div>
       <div 
-      className="grid grid-cols-1 grid-flow-row w-2/3 mx-auto  justify-center gap-5 mt-8 ">
+      className="grid grid-cols-1 grid-flow-row w-2/3 mx-auto justify-center gap-5 mt-8 ">
          {news && <NewsCard adminnews={news}/>} 
       </div>
      </div>

@@ -16,10 +16,10 @@ const news=new schema({
         type:String,
         required:[true, 'please add description']
     }, 
-    author: {
-        type:String,
-        required:[true, 'please add author']
-    },
+    // author: {
+    //     type:String,
+    //     required:[true, 'please add author']
+    // },
 },
 {
     timestamps:true,

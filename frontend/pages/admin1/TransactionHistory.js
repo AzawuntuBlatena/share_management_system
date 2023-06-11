@@ -47,11 +47,15 @@ export default function TransactionHistory() {
     user &&
    <Layout>   
     <div className="bg-gray-100 min-h-screen flex item-center">
-      <div className="max-w-5xl mx-auto py-16 px-4 ">
+      <div className="mx-auto py-16 px-4 ">
         <h1 className="text-3xl font-medium text-blue-400 mb-8">Transaction History</h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 justify-center md:grid-cols-2 gap-8">
           <div className="bg-white border border-gray-200 rounded-lg p-4 shadow">
           <div className="bg-white border border-gray-200 rounded-lg p-4 shadow">
+            
+          <p className="text-gray-600 mb-2">
+              <span className="font-semibold">TransactionID:<span className='pl-2 text-green-600'>{user.transactionId}</span></span> 
+            </p>
             <p className="text-gray-600 mb-2">
               <span className="font-semibold">First Name:<span className='pl-2 text-green-600'>{user.first_name}</span></span> 
             </p>
